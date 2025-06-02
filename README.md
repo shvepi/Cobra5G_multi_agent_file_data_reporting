@@ -1,5 +1,5 @@
 # File Data Reporting & REST API  
-*Supporting the Bachelor’s Thesis “Multi-Agent Root-Cause Analysis Framework for Private 5G Networks” by Petar Iliev fileciteturn0file0*
+*Supporting the Bachelor’s Thesis “Multi-Agent Root-Cause Analysis Framework for Private 5G Networks” by Petar Iliev
 
 This repository contains two primary components developed as part of Petar Iliev’s Bachelor’s Thesis at Technische Universität Berlin:
 1. **File Data Reporting** – a simulated NWDAF EventSubscription system implementing the 3GPP TS 28.532 File Data Reporting Service in TypeScript/Node.js.  
