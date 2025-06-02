@@ -12,24 +12,22 @@ The multi-agent system consists of several Python-based agents utilizing FastAPI
 - Hermes Agent: Performs correlation and manages anomaly data storage.
 
 ## Directory Structure:
-cobra-infra
-├── oam-service/
-│   ├── file-data-reporting/
-│   │   ├── rest-api/
-│   │   │   ├── file-generator.py
-│   │   │   ├── Dockerfile # File-data-reporting and mongoDB Docker File
+```
+├── file-data-reporting/
+│   ├── rest-api/
+│   │   ├── file-generator.py
+│   │   ├── Dockerfile # File-data-reporting and mongoDB Docker File
 │   │   │   ├── docker-compose.yml          # Main Docker Compose file 
 │   │   │   ├── multi-agent-file-reporting/
-│   │   │   │   ├── file-data-reporting/        # Existing File Data Reporting Service
-│   │   │   │   │   ├── backend_advisor_agent.py
-│   │   │   │   │   ├── user_monitor_agent.py
-│   │   │   │   │   ├── physical_layer_inspectorAgent_agent.py
-│   │   │   │   │   ├── hermes_agent.py
-│   │   │   │   │   ├── base_agent.py
-│   │   │   │   │   ├── main.py
-│   │   │   │   │   ├── requirements.txt
-│   │   │   │   │   └── Dockerfile
-
+│   │   │   │   ├── backend_advisor_agent.py
+│   │   │   │   ├── user_monitor_agent.py
+│   │   │   │   ├── physical_layer_inspectorAgent_agent.py
+│   │   │   │   ├── hermes_agent.py
+│   │   │   │   ├── base_agent.py
+│   │   │   │   ├── main.py
+│   │   │   │   ├── requirements.txt
+│   │   │   │   └── Dockerfile
+```
 ## Prerequisites
 - Docker
 - Docker Compose
