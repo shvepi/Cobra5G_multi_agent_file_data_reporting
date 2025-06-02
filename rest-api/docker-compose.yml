@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    restart: always
+    networks:
+      - file-data-network
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+  file-data-reporting:
+    image: file-data-reporting
+    container_name: file-data-reporting
+    restart: always
+    depends_on:
+      - mongodb
+    environment:
+      DB_URI: mongodb://mongodb:27017/file-data-reporting
+    networks:
+      - file-data-network
+    ports:
+      - "8080:8080"
+
+  multi-agent-runner:
+    build:
+      context: ./multi-agent-file-reporting
+    container_name: multi-agent-runner
+    depends_on:
+      - file-data-reporting
+      - mongodb
+    networks:
+      - file-data-network
+    ports:
+      - "5555:5555"   # BackendAdvisorAgent
+      - "5556:5556"   # UserMonitorAgent
+      - "5557:5557"   # PhysicalLayerInspectorAgent
+      - "8081:8081"   # HermesAgent
+    command: ["python", "main.py"]
+    volumes:
+      - ./multi-agent-file-reporting:/app
+
+networks:
+  file-data-network:
+    driver: bridge
+
+volumes:
+  mongodb-data:

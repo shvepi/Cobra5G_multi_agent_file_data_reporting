@@ -1,0 +1,75 @@
+{
+	"name": "file-data-reporting-mns",
+	"version": "17.1.0",
+	"description": "OAS 3.0.1 definition of the File Data Reporting MnS © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+	"main": "index.js",
+	"scripts": {
+		"start": "cross-env NODE_ENV=local node dist/index.js",
+		"prebuild": "rimraf dist",
+		"build": "tsc -p tsconfig.json && cp -r src/api dist/src/api",
+		"dev": "NODE_ENV=local nodemon -L index.ts",
+		"generate-types": "openapi-typescript src/api/openapi.yaml --output src/common/types/generated-types.ts",
+		"format": "prettier . --write",
+		"lint": "eslint --ignore-path .eslintignore --ext .ts .",
+		"test": "NODE_ENV=test jest",
+		"test:coverage": "NODE_ENV=test jest --collectCoverage",
+		"test:integ": "NODE_ENV=test jest --config jest.config.integ.ts",
+		"test:e2e": "NODE_ENV=test jest --config jest.config.e2e.ts"
+	},
+	"keywords": [
+		"openapi-generator",
+		"openapi"
+	],
+	"license": "Unlicense",
+	"private": true,
+	"dependencies": {
+		"axios": "^1.6.1",
+		"body-parser": "^1.19.0",
+		"camelcase": "^5.3.1",
+		"cookie-parser": "^1.4.4",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.16.4",
+		"express-openapi-validator": "^4.13.8",
+		"js-yaml": "^4.1.0",
+		"moment": "^2.29.4",
+		"moment-timezone": "^0.5.43",
+		"mongoose": "^8.12.1",
+		"morgan": "^1.10.0",
+		"ono": "^5.0.1",
+		"openapi-sampler": "^1.0.0-beta.15",
+		"rimraf": "^5.0.5",
+		"swagger-ui-express": "^4.0.2",
+		"uuid": "^9.0.1",
+		"winston": "^3.2.1"
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.6",
+		"@types/node": "^20.7.2",
+		"@types/supertest": "^2.0.15",
+		"@typescript-eslint/eslint-plugin": "^6.7.4",
+		"@typescript-eslint/parser": "^6.7.4",
+		"chai": "^4.2.0",
+		"chai-as-promised": "^7.1.1",
+		"cross-env": "^7.0.3",
+		"eslint": "^8.50.0",
+		"eslint-config-prettier": "^9.0.0",
+		"jest": "^29.7.0",
+		"jest-openapi": "^0.14.2",
+		"mocha": "^7.1.1",
+		"mongodb-memory-server": "^9.0.1",
+		"ncp": "^2.0.0",
+		"nodemon": "^3.0.1",
+		"openapi-typescript": "^6.7.0",
+		"prettier": "3.0.3",
+		"supertest": "^6.3.3",
+		"ts-jest": "^29.1.1",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.2.2"
+	},
+	"eslintConfig": {
+		"env": {
+			"node": true
+		}
+	}
+}
