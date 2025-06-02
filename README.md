@@ -209,7 +209,7 @@ BASE_PATH=/api/v1
 
 ## How This Supports the Bachelor’s Thesis
 
-All components in this repository were designed to validate and demonstrate the concepts laid out in Petar Iliev’s Bachelor’s Thesis (March 25, 2025) fileciteturn0file0. Key relationships include:
+All components in this repository were designed to validate and demonstrate the concepts laid out in Petar Iliev’s Bachelor’s Thesis (March 25, 2025). Key relationships include:
 
 - **TS 28.532 File Data Reporting**  
   Chapter 4 of the thesis describes simulating NWDAF EventSubscription by generating TS 28.532-compliant files containing trace, analytics, proprietary, and performance data. The `rest-api` module faithfully implements these endpoints and schemas.
