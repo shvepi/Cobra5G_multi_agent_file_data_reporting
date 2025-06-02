@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+aiohttp
+nest_asyncio
+pymongo
+requests
+geopy
